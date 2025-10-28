@@ -16,18 +16,17 @@ Step 5:Iterate through each word in the tokenized text.<br>
 •	For each verb , iterate through its synsets (sets of synonyms) using wordnet.synsets(word).<br>
 •	Extract synonyms and antonyms using lemma.name() and lemma.antonyms()[0].name() respectively.<br>
 •	Print the unique sets of synonyms and antonyms.
-<BR>
-<H3>Program:</H3>
 
+<H3>Program:</H3>
 !pip install nltk
 import nltk
 
-nltk.download( 'punkt_tab' )
+nltk.download('punkt_tab')
 nltk.download('wordnet')
 from nltk.tokenize import word_tokenize
-nltk.download( 'averaged_perceptron_tagger_eng' )
+nltk.download('averaged_perceptron_tagger_eng')
 
-sentence=input ()
+sentence = input()
 
 tokens = word_tokenize(sentence)
 
@@ -35,20 +34,21 @@ pos_tags = nltk.pos_tag(tokens)
 
 for word, tag in pos_tags:
     print(word, tag)
+
 from nltk.corpus import wordnet
 
-synonyms =[]
-antonyms =[]
+synonyms = []
+antonyms = []
 for word in tokens:
-        for syn in wordnet.synsets(word) :
-                for lemma in syn.lemmas():
-                        synonyms . append (lemma . name( ) )
-                        if lemma . antonyms():
-                                antonyms . append ( lemma. antonyms ( ) [0] . name ( ) )
+    for syn in wordnet.synsets(word):
+        for lemma in syn.lemmas():
+            synonyms.append(lemma.name())
+            if lemma.antonyms():
+                antonyms.append(lemma.antonyms().name())
 
-print ( "Synonyms : " ,set (synonyms) )
-print ( "Antonyms : " ,set(antonyms) )
-<BR>
+print("Synonyms :", set(synonyms))
+print("Antonyms :", set(antonyms))
+
 <H3>Output</H3>
 
 
