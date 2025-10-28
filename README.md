@@ -21,26 +21,34 @@ Step 5:Iterate through each word in the tokenized text.<br>
 <BR>
 !pip install nltk
 import nltk
-nltk.download('punkt_tab')
+
+nltk.download( 'punkt_tab' )
 nltk.download('wordnet')
 from nltk.tokenize import word_tokenize
-nltk.download('averaged_perceptron_tagger_eng')
-sentence = input()
+nltk.download( 'averaged_perceptron_tagger_eng' )
+
+sentence=input ()
+
 tokens = word_tokenize(sentence)
+
 pos_tags = nltk.pos_tag(tokens)
+
 for word, tag in pos_tags:
-    print(word, tag)
+print(word, tag)
 from nltk.corpus import wordnet
-synonyms = []
-antonyms = []
+
+synonyms =[]
+antonyms =[]
 for word in tokens:
-    for syn in wordnet.synsets(word):
-        for lemma in syn.lemmas():
-            synonyms.append(lemma.name())
-            if lemma.antonyms():
-                antonyms.append(lemma.antonyms().name())
-print("Synonyms :", set(synonyms))
-print("Antonyms :", set(antonyms))
+for syn in wordnet.synsets(word) :
+for lemma in syn.lemmas():
+synonyms . append (lemma . name( ) )
+if lemma . antonyms():
+antonyms . append ( lemma. antonyms ( ) . name ( ) )
+
+Print the synonyms and antonyms
+print ( "Synonyms : " ,set (synonyms) )
+print ( "Antonyms : " ,set(antonyms) )
 <BR>
 
 <H3>Output</H3>
