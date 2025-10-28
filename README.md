@@ -16,8 +16,9 @@ Step 5:Iterate through each word in the tokenized text.<br>
 •	For each verb , iterate through its synsets (sets of synonyms) using wordnet.synsets(word).<br>
 •	Extract synonyms and antonyms using lemma.name() and lemma.antonyms()[0].name() respectively.<br>
 •	Print the unique sets of synonyms and antonyms.
-<H3>Program:</H3>
 <BR>
+<H3>Program:</H3>
+
 !pip install nltk
 import nltk
 
@@ -44,12 +45,12 @@ for word in tokens:
                         synonyms . append (lemma . name( ) )
                         if lemma . antonyms():
                                 antonyms . append ( lemma. antonyms ( ) [0] . name ( ) )
-### Print the synonyms and antonyms
+
 print ( "Synonyms : " ,set (synonyms) )
 print ( "Antonyms : " ,set(antonyms) )
 <BR>
-
 <H3>Output</H3>
+
 
 Show your results here
 
