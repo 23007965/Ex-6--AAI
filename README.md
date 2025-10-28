@@ -17,8 +17,40 @@ Step 5:Iterate through each word in the tokenized text.<br>
 •	Extract synonyms and antonyms using lemma.name() and lemma.antonyms()[0].name() respectively.<br>
 •	Print the unique sets of synonyms and antonyms.
 <H3>Program:</H3>
+```python
+!pip install nltk
+import nltk
+#import wordnet
+nltk.download( 'punkt_tab' )
+nltk.download('wordnet')
+from nltk.tokenize import word_tokenize
+nltk.download( 'averaged_perceptron_tagger_eng' )
 
-Insert your code here
+sentence=input ()
+
+# Tokenize the sentence
+tokens = word_tokenize(sentence)
+
+# Perform parts-of-speech tagging
+pos_tags = nltk.pos_tag(tokens)
+# Print the parts of speech
+for word, tag in pos_tags:
+    print(word, tag)
+from nltk.corpus import wordnet
+
+# Identify synonyms and antonyms for each word
+synonyms =[]
+antonyms =[]
+for word in tokens:
+        for syn in wordnet.synsets(word) :
+                for lemma in syn.lemmas():
+                        synonyms . append (lemma . name( ) )
+                        if lemma . antonyms():
+                                antonyms . append ( lemma. antonyms ( ) [0] . name ( ) )
+# Print the synonyms and antonyms
+print ( "Synonyms : " ,set (synonyms) )
+print ( "Antonyms : " ,set(antonyms) )
+```
 
 <H3>Output</H3>
 
