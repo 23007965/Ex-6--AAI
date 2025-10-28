@@ -18,6 +18,7 @@ Step 5:Iterate through each word in the tokenized text.<br>
 •	Print the unique sets of synonyms and antonyms.
 
 <H3>Program:</H3>
+<BR>
 !pip install nltk
 import nltk
 
@@ -48,6 +49,7 @@ for word in tokens:
 
 print("Synonyms :", set(synonyms))
 print("Antonyms :", set(antonyms))
+<BR>
 
 <H3>Output</H3>
 <img width="779" height="399" alt="image" src="https://github.com/user-attachments/assets/9e7ae7a2-9ddc-4864-95f5-a06bc55eec87" />
